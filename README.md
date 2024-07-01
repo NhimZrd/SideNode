@@ -100,7 +100,7 @@ $request side-testnet-3 <ADDRESS_COACHEL>
 ```
 
 
-**Replace WALLET_ADDRESS with your wallet address.**
+**Replace WALLET_ADDRESS with your wallet address:**
 
 **Use the "Create validator" command to start the validator:**
 
@@ -138,7 +138,7 @@ After sending the command, enter your wallet password. The server should return 
 sided status 2>&1 | jq .SyncInfo
 ```
 
-### Check the logs ###
+### Check the logs:###
 
 ```
 journalctl -fu sided -o cat
@@ -161,13 +161,13 @@ sudo systemctl restart sided
 sided keys add $WALLET
 ```
 
-**Restore wallet.**
+**Restore wallet:**
 
 ```
 sided keys add $WALLET --recover
 ```
 
-**View wallet list.**
+**View wallet list:**
 
 ```
 sided keys list
@@ -190,7 +190,7 @@ sided tx staking delegate $(sided keys show $WALLET --bech val -a) 1000000uside 
 ```
 sided tx staking delegate <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
-**♪ Prison information ♪
+**Jail information:**
 
 ```
 sided q slashing signing-info $(sided tendermint show-validator)
