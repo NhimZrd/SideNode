@@ -49,7 +49,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 source <(curl -s https://itrocket.net/api/testnet/side/autoinstall/)
 ```
-
+  
 ** Specify wallet name, node name and leave port 26. The node was installed when the logs went. Exit the logs display mode by CTRL+C.**
 
 **Check node synchronization:**
