@@ -100,7 +100,7 @@ $request side-testnet-3 <ADDRESS_COACHEL>
 ```
 
 
-**Replace ADDRESS_WALKER with your wallet address.**
+**Replace WALLET_ADDRESS with your wallet address.**
 
 **Use the "Create validator" command to start the validator:**
 
@@ -127,3 +127,78 @@ sided tx staking create-validator.
 *- moniker : Specify the name you gave your node when you ran the Bash script.*
 
 *- details : You can specify your own value or leave the original value.*
+
+After sending the command, enter your wallet password. The server should return the transaction hash (txhash) to you. Go to [explorer](https://testnet.itrocket.net/side/staking) and paste the transaction hash into the search. You will see the address of your validator, as well as the status of its operation. Note that the validator will start after a short time.
+
+### Useful commands
+
+**Check synchronization:**
+
+```
+sided status 2>&1 | jq .SyncInfo
+```
+
+### Check the logs ###
+
+```
+journalctl -fu sided -o cat
+```
+
+**View node information:**
+
+```
+sided status 2>&1 | jq .NodeInfo
+```
+
+**Reboot the service:** 
+```
+sudo systemctl restart sided
+```
+
+**Add a new wallet:**
+
+```
+sided keys add $WALLET
+```
+
+**Restore wallet.**
+
+```
+sided keys add $WALLET --recover
+```
+
+**View wallet list.**
+
+```
+sided keys list
+```
+
+** Check wallet balance:** 
+
+```
+sided q bank balances $(sided keys show $WALLET -a)
+```
+
+** Delegate tokens to yourself:** ```
+
+```
+sided tx staking delegate $(sided keys show $WALLET --bech val -a) 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
+```
+
+**Delegate tokens to another validator. Replace <TO_VALOPER_ADDRESS> with the address of the validator to whom you want to delegate tokens:**
+
+```
+sided tx staking delegate <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
+```
+**♪ Prison information ♪
+
+```
+sided q slashing signing-info $(sided tendermint show-validator)
+```
+
+**Release the validator from jail:** 
+```
+sided tx slashing unjail --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
+```
+
+### Be sure to do your own reserch of projects before putting in node.Remember, by doing your own reserch, you learn and grow.
