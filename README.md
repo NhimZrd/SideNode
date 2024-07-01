@@ -201,4 +201,4 @@ sided q slashing signing-info $(sided tendermint show-validator)
 sided tx slashing unjail --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
-### Be sure to do your own reserch of projects before putting in node.Remember, by doing your own reserch, you learn and grow.
+##### Be sure to do your own reserch of projects before putting in node. Remember, by doing your own reserch, you learn and grow. ######
