@@ -33,7 +33,7 @@ I can single out Eric Chen, who is the CEO of Injective. After all, the product 
 - *Storage : 200GB SSD;*
 - *OS : Ubuntu 20.04 / Ubuntu 22.04.
 
-**Before installing the node, you must complete the [Galxe quests](https://galxe.com/sideprotocol/campaign/GCraxUn3Fj). This is done in order to gain access to the faucet that gives out test tokens. Test tokens are necessary for correct startup and operation of the node.
+**Before installing the node, you must complete the [Galxe quests](https://galxe.com/sideprotocol/campaign/GCraxUn3Fj). This is done in order to gain access to the faucet that gives out test tokens. Test tokens are necessary for correct startup and operation of the node.**
 
 **Go to [link](https://galxe.com/sideprotocol/campaign/GCraxUn3Fj), do quests. Bind your Discord, Twitter, Telegram if you have not done it before. After successfully completing the quests you will be able to access the "#testnet-faucet" branch in Discord Side Protocol.**
 
@@ -43,13 +43,13 @@ I can single out Eric Chen, who is the CEO of Injective. After all, the product 
 sudo apt update && sudo apt upgrade -y
 ```
 
-** Install the node using the script:** ```
+** Install the node using the script:** 
 
 ```
 source <(curl -s https://itrocket.net/api/testnet/side/autoinstall/)
 ```
 
-** Specify wallet name, node name and leave port 26. The node was installed when the logs went. Exit the logs display mode by CTRL+C.**
+**Specify wallet name, node name and leave port 26. The node was installed when the logs went. Exit the logs display mode by CTRL+C.**
 
 **Check node synchronization:**
 
@@ -57,7 +57,7 @@ source <(curl -s https://itrocket.net/api/testnet/side/autoinstall/)
 sided status 2>&1 | jq .SyncInfo
 ```
 
-**Unless the value of "catching_up" changes to "false" do not proceed to the next step! **
+**Unless the value of "catching_up" changes to "false" do not proceed to the next step!**
 
 **When the node has synchronized, you can move on to creating the wallet. Run the commands in sequence, replace "$WALLET" with the name of your wallet that you specified when running the script:**
 
