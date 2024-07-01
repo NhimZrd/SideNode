@@ -2,9 +2,8 @@
 
 # SideNode
 
-### Guide creation date: 03.04.2024
+### Guide creation date: 30.06.2024
 
-### Update date: 04/19/2024
 
 ### Project Description:
 
