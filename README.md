@@ -29,4 +29,37 @@ I can single out Eric Chen, who is the CEO of Injective. After all, the product 
 ### Recommended server specs: 
 
 - *CPU : 4 CORES;*
-- *RAM :
+- *RAM : 8 GB;*
+- *Storage : 200GB SSD;*
+- *OS : Ubuntu 20.04 / Ubuntu 22.04.
+
+**Before installing the node, you must complete the [Galxe quests](https://galxe.com/sideprotocol/campaign/GCraxUn3Fj). This is done in order to gain access to the faucet that gives out test tokens. Test tokens are necessary for correct startup and operation of the node.
+
+**Go to [link](https://galxe.com/sideprotocol/campaign/GCraxUn3Fj), do quests. Bind your Discord, Twitter, Telegram if you have not done it before. After successfully completing the quests you will be able to access the "#testnet-faucet" branch in Discord Side Protocol.**
+
+**Further connect to the server. Do a packet update with the command:**
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+** Install the node using the script:** ```
+
+```
+source <(curl -s https://itrocket.net/api/testnet/side/autoinstall/)
+```
+
+** Specify wallet name, node name and leave port 26. The node was installed when the logs went. Exit the logs display mode by CTRL+C.**
+
+**Check node synchronization:**
+
+```
+sided status 2>&1 | jq .SyncInfo
+```
+
+**Unless the value of "catching_up" changes to "false" do not proceed to the next step! **
+
+**When the node has synchronized, you can move on to creating the wallet. Run the commands in sequence, replace "$WALLET" with the name of your wallet that you specified when running the script:**
+
+```
+sided keys add $WALLET
