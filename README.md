@@ -12,7 +12,7 @@
 
 The solution they offer is designed to address CEX - centralization, DEX - problem with integrating new tokens, DEX - limited user experience compared to CEX. DEX is very demanding in terms of scalability and performance, in such cases gas fees are very high, which hits small traders. Here are the main problems Side Protocol wants to solve
 
-**Investment:** 
+**Investment:**
 
 I can single out Eric Chen, who is the CEO of Injective. After all, the product is very similar to Injective and will probably complement/combine it. As CEO Shane said, there will be a $30M closed tokensale and this amount will attract many people to the project.
 
@@ -43,7 +43,7 @@ I can single out Eric Chen, who is the CEO of Injective. After all, the product 
 sudo apt update && sudo apt upgrade -y
 ```
 
-** Install the node using the script:** 
+**Install the node using the script:**
 
 ```
 source <(curl -s https://itrocket.net/api/testnet/side/autoinstall/)
