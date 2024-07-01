@@ -150,7 +150,7 @@ journalctl -fu sided -o cat
 sided status 2>&1 | jq .NodeInfo
 ```
 
-**Reboot the service:** 
+**Reboot the service:**
 ```
 sudo systemctl restart sided
 ```
@@ -173,13 +173,13 @@ sided keys add $WALLET --recover
 sided keys list
 ```
 
-** Check wallet balance:** 
+**Check wallet balance:**
 
 ```
 sided q bank balances $(sided keys show $WALLET -a)
 ```
 
-** Delegate tokens to yourself:** ```
+**Delegate tokens to yourself:**
 
 ```
 sided tx staking delegate $(sided keys show $WALLET --bech val -a) 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
@@ -196,7 +196,7 @@ sided tx staking delegate <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --cha
 sided q slashing signing-info $(sided tendermint show-validator)
 ```
 
-**Release the validator from jail:** 
+**Release the validator from jail:**
 ```
 sided tx slashing unjail --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
