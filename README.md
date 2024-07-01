@@ -63,6 +63,7 @@ sided status 2>&1 | jq .SyncInfo
 
 ```
 sided keys add $WALLET
+```
 **Save the wallet address as well as the seed phrase (mnemonic phrase) to a safe place. Proceed to the next steps (Don't forget to replace "$WALLET" with your wallet name:)**
 
 ```
@@ -78,7 +79,7 @@ echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
 ```
 
 ```
-`` `` `` echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
+echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
 ```
 
 ```
@@ -92,17 +93,17 @@ sided status 2>&1 | jq .SyncInfo
 ```
 
 **Go to the faucet branch in Discord (#testnet-faucet) and request tokens by sending a message:**
-**
+
 
 ```
 $request side-testnet-3 <ADDRESS_COACHEL>
 ```
 
-**
-`` Replace ADDRESS_WALKER with your wallet address.
+
+**Replace ADDRESS_WALKER with your wallet address.**
 
 **Use the "Create validator" command to start the validator:**
-**
+
 
 ```
 sided tx staking create-validator.
@@ -123,6 +124,6 @@ sided tx staking create-validator.
 
 **Substitute values:**
 
-*- moniker : Specify the name you gave your node when you ran the Bash script.
+*- moniker : Specify the name you gave your node when you ran the Bash script.*
 
-*- details : You can specify your own value or leave the original value.
+*- details : You can specify your own value or leave the original value.*
