@@ -138,7 +138,7 @@ After sending the command, enter your wallet password. The server should return 
 sided status 2>&1 | jq .SyncInfo
 ```
 
-### Check the logs:###
+**Check the logs:**
 
 ```
 journalctl -fu sided -o cat
