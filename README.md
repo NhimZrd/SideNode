@@ -63,3 +63,66 @@ sided status 2>&1 | jq .SyncInfo
 
 ```
 sided keys add $WALLET
+**Save the wallet address as well as the seed phrase (mnemonic phrase) to a safe place. Proceed to the next steps (Don't forget to replace "$WALLET" with your wallet name:)**
+
+```
+WALLET_ADDRESS=$(sided keys show $WALLET -a)
+```
+
+```
+VALOPER_ADDRESS=$(sided keys show $WALLET --bech val -a)
+```
+
+```
+echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
+```
+
+```
+`` `` `` echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
+```
+
+```
+source $HOME/.bash_profile
+```
+
+**Check the node synchronization status again and make sure that catching_up is "false":**
+
+```
+sided status 2>&1 | jq .SyncInfo
+```
+
+**Go to the faucet branch in Discord (#testnet-faucet) and request tokens by sending a message:**
+**
+
+```
+$request side-testnet-3 <ADDRESS_COACHEL>
+```
+
+**
+`` Replace ADDRESS_WALKER with your wallet address.
+
+**Use the "Create validator" command to start the validator:**
+**
+
+```
+sided tx staking create-validator.
+--amount 10000000000uside
+--from $WALLET
+--commission-rate 0.1.
+--commission-max-rate 0.2.
+--commission-max-change-rate 0.01.
+--min-self-delegation 1.
+--pubkey $(sided tendermint show-validator) \-
+--moniker "test" \
+--identity "" \
+--details "I love blockchain." \
+--chain-id side-testnet-3 --
+--gas auto ---fees 1000uside.
+-y
+```
+
+**Substitute values:**
+
+*- moniker : Specify the name you gave your node when you ran the Bash script.
+
+*- details : You can specify your own value or leave the original value.
